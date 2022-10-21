@@ -84,16 +84,16 @@ Of course, when I started learning I didn’t think I would make games from scra
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink href="https://twitter.com/KonradPodstaws1" icon={TwitterIcon}>
+              <SocialLink href="https://twitter.com/KonradPodstaws1"  target="_blank" icon={TwitterIcon}>
                 Follow on Twitter
               </SocialLink>
-              <SocialLink href="https://www.instagram.com/konradpodstawski/" icon={InstagramIcon} className="mt-4">
+              <SocialLink href="https://www.instagram.com/konradpodstawski/"  target="_blank" icon={InstagramIcon} className="mt-4">
                 Follow on Instagram
               </SocialLink>
-              <SocialLink href="https://github.com/KonradPodstawski" icon={GitHubIcon} className="mt-4">
+              <SocialLink href="https://github.com/KonradPodstawski"  target="_blank" icon={GitHubIcon} className="mt-4">
                 Follow on GitHub
               </SocialLink>
-              <SocialLink href="https://www.linkedin.com/in/konrad-podstawski/" icon={LinkedInIcon} className="mt-4">
+              <SocialLink href="https://www.linkedin.com/in/konrad-podstawski/"  target="_blank" icon={LinkedInIcon} className="mt-4">
                 Follow on LinkedIn
               </SocialLink>
               <SocialLink
