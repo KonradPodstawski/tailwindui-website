@@ -60,7 +60,7 @@ export default function Projects() {
     <>
       <Head>
         <title>Projects - Konrad Podstawski</title>
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="Things I have done, in my spare time and which projects I am most proud of."

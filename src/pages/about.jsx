@@ -43,7 +43,7 @@ export default function About() {
     <>
       <Head>
         <title>About - Konrad Podstawski</title>
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="I’m Konrad Podstawski. I live in Tarnow where I try to realize my ideas"

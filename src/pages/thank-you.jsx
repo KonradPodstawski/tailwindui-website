@@ -7,7 +7,7 @@ export default function ThankYou() {
     <>
       <Head>
         <title>You’re subscribed - Konrad Podstawski</title>
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="Thanks for subscribing to my newsletter."

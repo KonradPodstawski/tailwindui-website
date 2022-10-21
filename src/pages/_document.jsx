@@ -39,7 +39,7 @@ export default function Document() {
   return (
     <Html className="h-full antialiased" lang="en">
       <Head>
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
         <link
           rel="alternate"

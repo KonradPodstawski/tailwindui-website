@@ -260,7 +260,7 @@ export default function Home({ articles }) {
         <title>
           Konrad Podstawski - Blockchain Developer, founder, and amateur astronaut
         </title>
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="I'm Konrad, a software engineer and Blockchain Developer from living in Tarnow, Poland. I'm a fan of new technologies and an evangelist of the Rust Programing language 🦀 ."

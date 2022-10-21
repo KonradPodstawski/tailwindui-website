@@ -22,7 +22,7 @@ export default function App({ Component, pageProps, router }) {
   return (
     <>
         <Head>
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className="fixed inset-0 flex justify-center sm:px-8">
         <div className="flex w-full max-w-7xl lg:px-8">
