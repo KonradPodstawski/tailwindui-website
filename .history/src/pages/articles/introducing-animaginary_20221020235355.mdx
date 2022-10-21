@@ -1,0 +1,78 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const meta = {
+  author: 'Adam Wathan',
+  date: '2022-09-02',
+  title: 'Introducing Animaginary: High performance web animations',
+  description:
+    'When you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+When you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.
+
+To make this possible, we needed to squeeze every drop of performance out of the browser possible. And so Animaginary was born.
+
+```js
+import { animate } from '@planetaria/animaginary'
+
+export function MyComponent({ open, children }) {
+  return (
+    <animate.div
+      in={open}
+      animateFrom="opacity-0 scale-95"
+      animateTo="opacity-100 scale-100"
+      duration={350}
+    >
+      {children}
+    </animate.div>
+  )
+}
+```
+
+# Rust! czyli dlaczego od paru lat jest najbardziej uwielbianym językiem programistów
+#welcome
+Na wstępie chciałbym powiedzieć że często będę stosował uproszczenia więc wszystkich pedantów z góry przepraszam :D.
+
+## Wstęp
+Język  rust w ostatnich latach bardzo  zyskał na popularność i bardzo szybko wdarł się na listę “najbardziej uwielbianych języków” według portalu StackOverflow : [Stack Overflow Developer Survey 2021](https://insights.stackoverflow.com/survey/2021#section-most-loved-dreaded-and-wanted-programming-scripting-and-markup-languages)
+ I pozostaje tam do dziś.
+
+## Ale w ogóle to o co z mim chodzi i skąd ta popularność?
+### Cargo I Clippy
+Cargo jest  menadżerem paczek  ( tak jak np: npm w js ) . Cargo nie pozwala na kompilację jeżeli program może być niebezpieczny (bez zadeklarowanie klauzuli `unsafe`.
+* Cargo pozwala w bardzo łatwy sposób do dawać (wszystkie paczki dostępne są na stronie crates.io i wystarczy przekleić linijkę ze strony i już wszystko działa)  usuwać paczki, konfigurować środowisko i kompilacje i wiele innych . Jest to narzędzie o bardzo rozległych zastosowaniach.
+* Clippy jest  linterem w języku rust który bardzo upraszcza naszą prace podpowiadając nam “co robimy nie tak” a często jeszcze “jak mamy to naprawić”. I wrazie potrzeby odeśle nas do odpowiedniej strony gdzie omówiony szerzej jest błąd. Clippy jest domyślnie instalowane w ramach cargo
+* 
+### Pożyczanie i własność
+We prawie wszystkich artykułach opisujących ten język przewijają się 2 słowa kluczowe mianowicie borrowing (“pożyczanie”) i ownership(“własność”). Ale przecież nie jest to nic nowego w świecie języków programowania wiele języków przecież posiada coś możliwość programowania w ten sposób np w języku C++ jeżeli w podając parametry aukcji damy na początku dwa razy znak `&` to zadziała to tak samo.
+Rust podszedł do tego kompletnie inaczej gdyż pożyczanie jest zachowaniem domyślnym i musimy dopiero użyć specjalnych funkcji żeby to zachowanie zmienić (dotyczy to typów które nie są prymitywami) bo prymitywy są domyślnie kopiowane. 
+Jest to mechanizm który najbardziej odróżnia rusta od innych dominujących języków programowania.
+### Wydajność i bezpieczeństwo
+
+<img src={"https://lh5.googleusercontent.com/M2oMAKylMYNqhLn8SWgame22KN_sMidepBHhoWduRQDpFjQ2DhQzg34WnAtoZgqNxHc0PsGl1JFNUPY1pfCrxBu9Tv0hJnj_FwwLkRpyJa1Rm2aeQz3V15r_U5bqrHzv0hDW6Rfc"} alt="Rust diagram" />
+
+Rust dzięki swoim mechanizm jest całkowicie ( no może z wyjątkiem pewnych funkcji ) bezpieczny dopóki nie użyjemy klauzuli `unsafe`  .
+W wielu testach wydajność plasuje się on na poziomie mniej więcej C++ jednocześnie w przeciwieństwie do C++ będąc bezpieczny.
+
+<img src={"https://lh6.googleusercontent.com/jtqKF6iJ8M-doWs5K9XYQtRayDg1Bt8YIAFmBjdaaa-0XZmTmPxJDp74JrtVuEJsbF1Gs4-4OG3NozKdNSrQwTHE8exc1ctyWkpzQZRuPZuN--PHPyAaiCv3499NBUycUeuNGCNu"} alt="Rust statstics" />
+
+### Low level language high level functions
+Rust jest nazywany językim nisko poziomowym językiem bo mamy z jego poziom dostęp do pamięci i możemy w każdej chwili użyć jeżeli chcemy wskaźników nie tylko inteligentnych ale też surowych jeżeli użyjemy klauzuli `unsafe` . Ale Rust posiada wiele wysokopoziomowych funkcji  dostępnych odrazu w języku (jeżeli jeszcze rozszerzymy to o które są tworzone przez społeczność to możemy pisać “prawie jak w wysoko poziomych językach”[oczywiście jest to duże uproszczenie]) dzięki czemu pisanie kodu jest znacznie efektywniejsze niż w innych językach niskopoziomowych.
+
+## Wady
+### Wysoki próg wejścia
+Rust jest bardzo specyficznym językiem przez takie mechaniki jak borrowing, ownership czy lifetime’y jest to język którego nie poleciłbym na pierwszy język programowania. Pomimo rewelacyjnej dokumentacji te koncepty nie są proste do zrozumienia i zastosowania. 
+### Bliblioteki
+Sam język jest jeszcze młody (2009) przez co nie ma jeszcze bardzo mocno rozrośniętego community  co oznacza jeszcze nieraz nie do końca dobrze albo nie opisane mniej popularne biblioteki i sporo porzuconych użytecznych projektów. ( wraz ze wzrostem popularności sytuacja się znacznie poprawiła ale nadal takie sytuacje występują). 
+### Bardzo długa kompliacja i powtarzające się paczki
+Cargo przy każdej pobranej paczce pobiera jej wszystkie zależności co powoduje częste duplikowanie się paczek lub pojawianie się ich w różnych wersjach. ( możemy tego uniknąć ustawiając w pliku konfiguracyjnym LTO [link time optimizations ] na true ale może to znacznie wedłużyć już i tak długą kompilację)
+
+## Wsparcie przez duże firmy
+Rust jest wspierany i chwalony przez takie firmy jak: Amazon, Dropbox, npmjs, yelp, Sentry,  Mozilla, Cloduflare, Microsoft, Buoyant, Sensirion, Airborne Engineering,  Terminal Technologies i wiele innych
+Język jest głównie chwalony za łatwość pisania stabilnego kodą wielowątkowego przy cały czas rewelacyjnej wydajności oraz za ogólna wydajność języka.
+
+## Podsumowanie
+Rust jest jest językiem który ma problemy z wysokiem progiem wejścia, młodymi jeszcze bibliotekami, małą społecznością i długą kompilacją nie przeszkodziło mu to jednak w uzyskaniu sympatii programistów i największych firm oraz Linusa Torvalda dzięki swoim niewątpliwym zaletą które łączą największe zalety języków wysokopoziomywch i niskopoziomowych.
+Ja dalej pozostaje zakochany ❤️ w tym języku mam nadzieję że wam też się spodoba i zapraszam do nauki bo warto.
