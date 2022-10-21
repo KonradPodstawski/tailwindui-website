@@ -30,6 +30,7 @@ export default function Speaking() {
     <>
       <Head>
         <title>Speaking - Konrad Podstawski</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
         <meta
           name="description"
           content="I’ve spoken at events all around the world and been interviewed for many podcasts."
