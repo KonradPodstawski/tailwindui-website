@@ -33,7 +33,7 @@ export function ArticleLayout({
   return (
     <>
       <Head>
-        <title>{`${meta.title} - Spencer Sharp`}</title>
+        <title>{`${meta.title} - Konrad Podstawski`}</title>
         <meta name="description" content={meta.description} />
         <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
       </Head>
