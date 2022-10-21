@@ -35,6 +35,7 @@ export function ArticleLayout({
       <Head>
         <title>{`${meta.title} - Spencer Sharp`}</title>
         <meta name="description" content={meta.description} />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
       </Head>
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
